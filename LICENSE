@@ -1,0 +1,24 @@
+END USER LICENSE AGREEMENT
+Copyright (c) 2026 ultrasmart.pl. All Rights Reserved.
+
+This software, including the Hub Monitor SmartApp, associated device drivers, and documentation (collectively, the "Software"), is the proprietary commercial property of ultrasmart.pl and is protected by copyright laws.
+
+1. PERMITTED USE
+You are granted a limited, non-exclusive, non-transferable right to download and install this Software directly to your personal Hubitat Elevation hub, strictly for use in conjunction with official ultrasmart.pl hardware (ESP32 Tactical Monitor).
+
+2. RESTRICTIONS ON USE
+To maintain the integrity and stability of the product, you may NOT:
+
+Modify, alter, edit, or create derivative works of the Software.
+
+Distribute, sub-license, sell, rent, or commercialize the Software.
+
+Extract or reuse portions of the source code for other projects.
+
+Remove or alter any proprietary notices or labels on the Software.
+
+3. SUPPORT AND MODIFICATIONS
+This Software is provided as a closed, proprietary system. Any unauthorized modification of the source code immediately voids all warranties and eligibility for technical support. ultrasmart.pl assumes no responsibility for hub instability, device failures, or network issues resulting from user-altered code.
+
+4. DISCLAIMER OF LIABILITY
+THE SOFTWARE IS PROVIDED "AS IS" AND WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED. IN NO EVENT SHALL ULTRASMART.PL BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE SOFTWARE.
