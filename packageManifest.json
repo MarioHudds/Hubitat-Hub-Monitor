@@ -1,0 +1,30 @@
+{
+    "packageName": "Hub Monitor",
+    "author": "ultrasmart.pl",
+    "version": "1.0.0",
+    "minimumHubitatVersion": "2.3.0",
+    "dateReleased": "2026-04-27",
+    "licenseFile": "https://raw.githubusercontent.com/MarioHudds/Hubitat-Hub-Monitor/refs/heads/main/LICENSE",
+    "releaseNotes": "Initial release of the Hub Monitor Companion App and Driver.",
+    "description": "Installs both the Companion App and the required Driver.",
+    "category": "Integrations",
+    "apps": [
+        {
+            "id": "hub-monitor-app-1",
+            "name": "Hub Monitor",
+            "namespace": "community",
+            "location": "https://raw.githubusercontent.com/MarioHudds/Hubitat-Hub-Monitor/refs/heads/main/companion_app_hpm_prod.groovy",
+            "required": true,
+            "oauth": true
+        }
+    ],
+    "drivers": [
+        {
+            "id": "hub-monitor-driver-1",
+            "name": "Hubitat Notifier",
+            "namespace": "Community",
+            "location": "https://raw.githubusercontent.com/MarioHudds/Hubitat-Hub-Monitor/refs/heads/main/hub_monitor_notifier_prod.groovy",
+            "required": true
+        }
+    ]
+}
