@@ -15,7 +15,7 @@ definition(
     name: "Hub Monitor",
     namespace: "community",
     author: "ultrasmart.pl",
-    description: "Thick Server for ESP32 Tactical Monitor (Event Driven + Full Sync)",
+    description: "Companion App for The Hub Monitor",
     category: "My Apps",
     iconUrl: "",
     iconX2Url: ""
