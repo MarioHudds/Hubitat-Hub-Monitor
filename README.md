@@ -2,7 +2,7 @@
 
 **SenseCap D1 Indicator integration for the Hubitat Hub**
 
-Hub Monitor is a dedicated SmartApp and Device Driver package for Hubitat Elevation. It provides a secure, event-driven, full-sync bridge between your Hubitat hub and your physical SenseCap D1 Indicator display.
+Hub Monitor is a dedicated SmartApp and Device Driver package for Hubitat Elevation. It provides a secure, event-driven, full-sync bridge between your Hubitat hub and your physical SenseCap D1 Indicator display which must be purchased from hubitat-shop.eu site. Any other hardware (SenseCap D1 Indicator) purchased elsewhere WILL NOT WORK with this software.
 
 ---
 
