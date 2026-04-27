@@ -10,7 +10,7 @@
     "category": "Integrations",
     "apps": [
         {
-            "id": "hub-monitor-app-2",
+            "id": "hma_2",
             "name": "Hub Monitor",
             "namespace": "community",
             "location": "https://raw.githubusercontent.com/MarioHudds/Hubitat-Hub-Monitor/refs/heads/main/companion_app_hpm_prod.groovy",
@@ -20,7 +20,7 @@
     ],
     "drivers": [
         {
-            "id": "hub-monitor-driver-2",
+            "id": "hmd_2",
             "name": "Hub Monitor Notifier",
             "namespace": "community",
             "location": "https://raw.githubusercontent.com/MarioHudds/Hubitat-Hub-Monitor/refs/heads/main/hub_monitor_notifier_prod.groovy",
