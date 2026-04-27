@@ -21,8 +21,8 @@
     "drivers": [
         {
             "id": "hub-monitor-driver-1",
-            "name": "Hubitat Notifier",
-            "namespace": "Community",
+            "name": "Hub Monitor Notifier",
+            "namespace": "community",
             "location": "https://raw.githubusercontent.com/MarioHudds/Hubitat-Hub-Monitor/refs/heads/main/hub_monitor_notifier_prod.groovy",
             "required": true
         }
