@@ -52,7 +52,7 @@ def deviceCommand() {
     }
     
     def device = null
-    for (int i = 0; i < 16; i++) {
+    for (int i = 0; i < getMaxSlots(); i++) {
         def d = settings["device_${i}"]
         if (d && d.id.toString() == devId.toString()) {
             device = d
@@ -323,6 +323,8 @@ def appButtonHandler(btn) {
 
 def installed() {
     log.info "Installed"
+    app.removeSetting("hsmSlot")
+    app.removeSetting("modeSlot")
     initialize()
 }
 
@@ -342,7 +344,7 @@ def updated() {
 def initialize() {
     def newMap = [:]
 
-    int maxSlots = 16
+    int maxSlots = getMaxSlots()
     for (int i = 0; i < maxSlots; i++) {
         def dev = settings["device_${i}"]
         if (dev) {
@@ -437,10 +439,9 @@ def modeHandler(evt) {
 }
 
 // --- SYNC ENGINE ---
-def stripDiacritics(String str) {
-    if (!str) return ""
-    
-    def map = [
+
+def getDiacriticsMap() {
+    return [
         'ą':'a', 'ć':'c', 'ę':'e', 'ł':'l', 'ń':'n', 'ó':'o', 'ś':'s', 'ź':'z', 'ż':'z',
         'Ą':'A', 'Ć':'C', 'Ę':'E', 'Ł':'L', 'Ń':'N', 'Ó':'O', 'Ś':'S', 'Ź':'Z', 'Ż':'Z',
         'ä':'a', 'ö':'o', 'ü':'u', 'ß':'ss', 'Ä':'A', 'Ö':'O', 'Ü':'U',
@@ -454,9 +455,21 @@ def stripDiacritics(String str) {
         'Ě':'E', 'Š':'S', 'Č':'C', 'Ř':'R', 'Ž':'Z', 'Ý':'Y', 'Ů':'U', 'Ď':'D', 'Ť':'T', 'Ň':'N',
         'å':'a', 'æ':'ae', 'ø':'o', 'Å':'A', 'Æ':'AE', 'Ø':'O'
     ]
+}
+
+def stripDiacritics(String str) {
+    if (!str) return ""
     
-    def res = str
-    map.each { k, v -> res = res.replace(k, v) }
+   def res = str
+    
+    if (res =~ /[^\x00-\x7F]/) {
+        def map = getDiacriticsMap()
+        map.each { k, v -> 
+            if (res.contains(k)) { 
+                res = res.replace(k, v) 
+            }
+        }
+    }
     
     res = res.replaceAll("[^\\x00-\\x7F]", "")
     res = res.trim()
@@ -477,7 +490,7 @@ def sendFullSync() {
     }
 
     int highestSlot = -1
-    for (int i = 0; i < 16; i++) {
+    for (int i = 0; i < getMaxSlots(); i++) {
         if (settings["device_${i}"]) highestSlot = i
     }
     
@@ -633,6 +646,10 @@ int safeToInt(val, int defaultVal = 0) {
     return defaultVal
 }
 
+int getMaxSlots() {
+    return (state.visiblePages ?: 4) * 4
+}
+
 // --- HTTP SENDER ---
 def sendJson(dataMap) {
     if (state.isPaired && state.authToken) {
@@ -711,9 +728,11 @@ def pushCredentialsToMonitor() {
 
 def provisionCallback(response, data) {
     if (response.hasError()) {
-        log.error "Provisioning failed: HTTP ${response.status}. Is the IP correct?"
+        log.error "Provisioning failed..."
     } else {
         log.info "Provisioning successful! The ESP32 received the credentials."
+        // We add the sync HERE, guaranteeing the ESP32 is ready!
+        sendFullSync() 
     }
 }
 
@@ -852,7 +871,7 @@ def executePairing() {
         app.removeSetting("pairingPin")
         log.info "✅ Pairing successful! Token securely saved to Hubitat database."
         pushCredentialsToMonitor()
-        runIn(2, "sendFullSync")
+        //runIn(2, "sendFullSync")
         
         runEvery5Minutes("sendFullSync")
         schedule("0 23 15 ? * *", "fetchCloudManifest")
