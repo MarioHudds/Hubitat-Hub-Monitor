@@ -105,6 +105,9 @@ def telemetryHandler() {
         if (payload && payload.event == "boot" && payload.build != null) {
             state.espCurrentBuild = safeToInt(payload.build, 0)
             log.info "ESP32 Boot Telemetry Received. Current Firmware Build: ${state.espCurrentBuild}"
+            
+            resumeConnection()
+            
             return [status: "ok", message: "Telemetry saved"]
         } else {
             log.warn "Received malformed telemetry payload: ${payload}"
