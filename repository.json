@@ -1,0 +1,9 @@
+{
+  "author": "ultrasmart Maroisz Jarczak",
+  "githubUrl": "https://github.com/MarioHudds/Hubitat-Hub-Monitor",
+  "packages": [
+    {
+      "location": "https://raw.githubusercontent.com/MarioHudds/Hubitat-Hub-Monitor/refs/heads/main/packageManifest.json"
+    }
+  ]
+}
