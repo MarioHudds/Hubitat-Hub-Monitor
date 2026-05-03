@@ -741,7 +741,7 @@ def provisionCallback(response, data) {
 
 // --- OTA & MANIFEST LOGIC ---
 def fetchCloudManifestSync() {
-    String targetUrl = "https://f39f0173.hubitat-shop.eu/manifest.json"
+    String targetUrl = "https://f39f0173.hubitat-shop.eu/manifest.json?t=${now()}"
     
     def params = [
         uri: targetUrl,
@@ -779,7 +779,7 @@ def fetchCloudManifestSync() {
 }
 
 def fetchCloudManifest() {
-    String targetUrl = "https://f39f0173.hubitat-shop.eu/manifest.json"
+    String targetUrl = "https://f39f0173.hubitat-shop.eu/manifest.json?t=${now()}"
     
     def params = [
         uri: targetUrl,
