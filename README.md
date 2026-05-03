@@ -11,7 +11,7 @@ Hub Monitor is a dedicated SmartApp and Device Driver package for Hubitat Elevat
 Before installing this app, please ensure you have the following ready:
 1. **SenseCap D1 Indicator Monitor purchased from hubitat-shop.eu** You must have the official physical hardware powered on and connected to your local Wi-Fi network.
 2. **Hubitat Package Manager (HPM):** It is highly recommended to install this via HPM for automatic updates.
-3. **OAuth Must Be Enabled:** This app requires secure token communication. **After installation, you must go to the 'App Code' section in your Hubitat dashboard, open the Hub Monitor app code, and click the `OAuth` button to enable it.** The pairing process will fail without this.
+3. **OAuth Must Be Enabled:** This app requires secure token communication. **After installation, you must go to the 'App Code' section in your Hubitat dashboard, open the Hub Monitor app code, and make sure `OAuth` is anabled.** If it is, do not changge anything. The pairing process will fail without this.
 
 ---
 
