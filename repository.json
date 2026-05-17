@@ -6,7 +6,7 @@
       "id": "HMN",
       "name": "Hubitat Monitor New",
       "category": "Control",
-      "location": "https://raw.githubusercontent.com/MarioHudds/Hubitat-Hub-Monitor/refs/heads/main/packageManifest.json"
+      "location": "https://raw.githubusercontent.com/MarioHudds/Hubitat-Hub-Monitor/refs/heads/main/packageManifest.json",
       "tags": [
        "Monitoring",
       ]
