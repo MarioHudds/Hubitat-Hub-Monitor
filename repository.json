@@ -1,15 +1,18 @@
 {
-  "author": "ultrasmart.pl",
-  "githubUrl": "https://github.com/MarioHudds/Hubitat-Hub-Monitor",
-  "packages": [
-    {
-      "id": "HMN",
-      "name": "Hubitat Monitor New",
-      "category": "Control",
-      "location": "https://raw.githubusercontent.com/MarioHudds/Hubitat-Hub-Monitor/refs/heads/main/packageManifest.json",
-      "tags": [
-       "Dashboard",
-      ]
-    }
-  ]
+  "author": "ultrasmart Maroisz Jarczak",
+"gitHubUrl": "https://github.com/MarioHudds",
+"payPalUrl": "",
+"packages": [
+{
+"name": "Hubitat Hub Monitor",
+"category": "Utility",
+"location": "https://raw.githubusercontent.com/MarioHudds/Hubitat-Hub-Monitor/refs/heads/main/packageManifest.json",
+"description": "I built Hub Monitor, a true appliance — something that just sits there, stays connected, and works instantly.",
+"descriptive": "",
+"tags": [
+"Dashboards",
+"Notifications"
+]
+}
+]
 }
