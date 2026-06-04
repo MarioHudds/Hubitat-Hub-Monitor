@@ -1,5 +1,5 @@
 {
-  "author": "ultrasmart Mariusz Jarczak",
+  "author": "ultrasmart.pl",
   "githubUrl": "https://github.com/MarioHudds/Hubitat-Hub-Monitor",
   "packages": [
     {
@@ -8,7 +8,7 @@
       "category": "Control",
       "location": "https://raw.githubusercontent.com/MarioHudds/Hubitat-Hub-Monitor/refs/heads/main/packageManifest.json",
       "tags": [
-       "Monitoring",
+       "Dashboard",
       ]
     }
   ]
